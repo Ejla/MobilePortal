@@ -1,0 +1,2 @@
+module WebclipsHelper
+end

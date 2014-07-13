@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @webclip.name %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @webclip.link %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @webclip.order %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @webclip.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @webclip.category_id %>
+</p>
+
+<%= link_to 'Edit', edit_webclip_path(@webclip) %> |
+<%= link_to 'Back', webclips_path %>
