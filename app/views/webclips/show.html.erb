@@ -23,5 +23,11 @@
   <%= @webclip.pages.map(&:name).join(', ') %>
 </p>
 
+<p>
+  <strong>XHTML Image Preview:</strong>
+  <%= image_tag(@webclip.image, :large) %>
+  
+</p>
+
 <%= link_to 'Edit', edit_webclip_path(@webclip) %> |
 <%= link_to 'Back', webclips_path %>
