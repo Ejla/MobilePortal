@@ -23,25 +23,24 @@ ActiveRecord::Schema.define(version: 20140715151239) do
     t.datetime "updated_at"
   end
 
+  create_table "page_webclips", force: true do |t|
+    t.integer "page_id"
+    t.integer "webclip_id"
+    t.integer "position"
+  end
+
+  add_index "page_webclips", ["page_id"], name: "index_page_webclips_on_page_id"
+  add_index "page_webclips", ["webclip_id"], name: "index_page_webclips_on_webclip_id"
+
   create_table "pages", force: true do |t|
     t.string   "name"
-    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pages_webclips", force: true do |t|
-    t.integer "page_id"
-    t.integer "webclip_id"
-  end
-
-  add_index "pages_webclips", ["page_id"], name: "index_pages_webclips_on_page_id"
-  add_index "pages_webclips", ["webclip_id"], name: "index_pages_webclips_on_webclip_id"
-
   create_table "webclips", force: true do |t|
     t.string   "name"
     t.string   "link"
-    t.integer  "position"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"

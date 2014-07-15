@@ -12,17 +12,14 @@ Webclip.create!([{
   name: "Webclip 1",
   link: "http://www.codeschool.com",
   description: "Lorem ipsum dolor sit amet",
-  position: 1
 },
 {
   name: "Webclip 2",
   link: "http://www.codeschool.com",
   description: "Lorem ipsum dolor sit amet",
-  position: 2
 },
 {
   name: "Webclip 3",
   link: "http://www.codeschool.com",
   description: "Lorem ipsum dolor sit amet",
-  position: 3
 }])

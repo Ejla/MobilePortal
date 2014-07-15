@@ -1,4 +1,5 @@
 class Webclip < ActiveRecord::Base
-  has_and_belongs_to_many :pages
+  has_many :page_webclips
+  has_many :pages, through: :page_webclips
   belongs_to :image
 end
