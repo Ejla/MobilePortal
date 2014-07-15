@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @webclip.name %>
@@ -11,8 +9,8 @@
 </p>
 
 <p>
-  <strong>Order:</strong>
-  <%= @webclip.order %>
+  <strong>Position:</strong>
+  <%= @webclip.position %>
 </p>
 
 <p>
@@ -21,8 +19,8 @@
 </p>
 
 <p>
-  <strong>Page:</strong>
-  <%= @webclip.page_id %>
+  <strong>Pages:</strong>
+  <%= @webclip.pages.map(&:name).join(', ') %>
 </p>
 
 <%= link_to 'Edit', edit_webclip_path(@webclip) %> |
