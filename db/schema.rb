@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714113430) do
+ActiveRecord::Schema.define(version: 20140715151239) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20140714113430) do
   add_index "categories_webclips", ["category_id"], name: "index_categories_webclips_on_category_id"
   add_index "categories_webclips", ["webclip_id"], name: "index_categories_webclips_on_webclip_id"
 
+  create_table "images", force: true do |t|
+    t.text     "base64_string"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "name"
+    t.string   "tags"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "webclips", force: true do |t|
     t.string   "name"
     t.string   "link"
@@ -35,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140714113430) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "image_id"
   end
 
 end

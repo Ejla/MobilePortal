@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  base64_string: MyText
+  width: 1
+  height: 1
+  name: MyString
+  tags: MyString
+
+two:
+  base64_string: MyText
+  width: 1
+  height: 1
+  name: MyString
+  tags: MyString
