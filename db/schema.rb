@@ -13,21 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140715151239) do
 
-  create_table "categories", force: true do |t|
-    t.string   "name"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "categories_webclips", force: true do |t|
-    t.integer "category_id"
-    t.integer "webclip_id"
-  end
-
-  add_index "categories_webclips", ["category_id"], name: "index_categories_webclips_on_category_id"
-  add_index "categories_webclips", ["webclip_id"], name: "index_categories_webclips_on_webclip_id"
-
   create_table "images", force: true do |t|
     t.text     "base64_string"
     t.integer  "width"
@@ -37,6 +22,21 @@ ActiveRecord::Schema.define(version: 20140715151239) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "pages", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages_webclips", force: true do |t|
+    t.integer "page_id"
+    t.integer "webclip_id"
+  end
+
+  add_index "pages_webclips", ["page_id"], name: "index_pages_webclips_on_page_id"
+  add_index "pages_webclips", ["webclip_id"], name: "index_pages_webclips_on_webclip_id"
 
   create_table "webclips", force: true do |t|
     t.string   "name"

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :images
 
-  resources :categories
+  resources :pages
 
   resources :webclips
 

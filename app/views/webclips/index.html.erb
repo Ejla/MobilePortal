@@ -7,7 +7,7 @@
       <th>Link</th>
       <th>Order</th>
       <th>Description</th>
-      <th>Category</th>
+      <th>Page</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= webclip.link %></td>
         <td><%= webclip.position %></td>
         <td><%= webclip.description %></td>
-        <td><%= webclip.categories.map(&:name).join(', ') %></td>
+        <td><%= webclip.pages.map(&:name).join(', ') %></td>
         <td><%= link_to 'Show', webclip %></td>
         <td><%= link_to 'Edit', edit_webclip_path(webclip) %></td>
         <td><%= link_to 'Destroy', webclip, method: :delete, data: { confirm: 'Are you sure?' } %></td>

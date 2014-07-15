@@ -1,6 +1,6 @@
-class CreateCategories < ActiveRecord::Migration
+class CreatePages < ActiveRecord::Migration
   def change
-    create_table :categories do |t|
+    create_table :pages do |t|
       t.string :name
       t.integer :position
 

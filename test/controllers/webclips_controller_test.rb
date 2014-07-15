@@ -18,7 +18,7 @@ class WebclipsControllerTest < ActionController::TestCase
 
   test "should create webclip" do
     assert_difference('Webclip.count') do
-      post :create, webclip: { category_id: @webclip.category_id, description: @webclip.description, link: @webclip.link, name: @webclip.name, order: @webclip.order }
+      post :create, webclip: { page_id: @webclip.page_id, description: @webclip.description, link: @webclip.link, name: @webclip.name, order: @webclip.order }
     end
 
     assert_redirected_to webclip_path(assigns(:webclip))
@@ -35,7 +35,7 @@ class WebclipsControllerTest < ActionController::TestCase
   end
 
   test "should update webclip" do
-    patch :update, id: @webclip, webclip: { category_id: @webclip.category_id, description: @webclip.description, link: @webclip.link, name: @webclip.name, order: @webclip.order }
+    patch :update, id: @webclip, webclip: { page_id: @webclip.page_id, description: @webclip.description, link: @webclip.link, name: @webclip.name, order: @webclip.order }
     assert_redirected_to webclip_path(assigns(:webclip))
   end
 

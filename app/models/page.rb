@@ -1,3 +1,3 @@
-class Category < ActiveRecord::Base
+class Page < ActiveRecord::Base
   has_and_belongs_to_many :webclips
 end
