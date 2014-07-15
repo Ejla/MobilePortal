@@ -1,13 +1,20 @@
 
-<p>
-  <strong>Name:</strong>
-  <%= @page.name %>
-</p>
+<h3><%= @page.name %></h3>
 
-<p>
-  <strong>Webclip:</strong>
-  <%= @page.webclips.map(&:name).join(', ') %>
-</p>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
+<ul class="page_show">
+  <% @page.webclips.order(:position).each do |webclip| %>
+      <li>
+        <div>
+          <%= link_to webclip.link do %>
+          <%= image_tag(webclip.image, :default)%>
+          <h5><%= webclip.name %></h5>
+          <% end %>
+        </div>
+        <span><%= link_to 'Edit', edit_webclip_path(webclip) %></span>
+      </li>
+      
+  <% end %>
+</ul>
+<br/><br/>
+<%= link_to 'Edit Page', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>
