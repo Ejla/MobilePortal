@@ -14,3 +14,50 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  color: #2c3e50;
+  padding-top: 80px;
+}
+a, a:visited {
+  color: #1BA357;
+  text-decoration: none;
+}
+a:hover, a:active{
+  color: #1EB862;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.navbar-inverse {
+background-color: #2C3E50;
+border-bottom: none;
+}
+.navbar-inverse .navbar-brand{
+  color: #44DF85;
+}
+.navbar-inverse .navbar-nav > li > a {
+color: #ddd;
+}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+color: #FFF;
+border-bottom: 3px solid #2ECC71;
+background-color: #1A242F;
+}
+
+.btn{
+  border-radius: 0;
+}
+.btn-default{color:#fff;background-color:#1EB862;border-color:#1EB862}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open
+.dropdown-toggle.btn-default{color:#fff;background-color:#1BA357;border-color:#1BA357}
+
+.btn-danger {
+  color:#fff;
+  background-color:#f15f4c;
+  border-color:#ef4a34
+}
+.btn-danger:hover,.btn-danger:focus,.btn-danger:active,.btn-danger.active,.open.dropdown-toggle.btn-danger{
+  color:#fff;
+  background-color:#ee3d26;
+  border-color:#d62711
+}

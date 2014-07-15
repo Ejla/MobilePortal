@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140714113430) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.integer  "webclip_id"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -25,12 +25,14 @@ ActiveRecord::Schema.define(version: 20140714113430) do
     t.integer "webclip_id"
   end
 
+  add_index "categories_webclips", ["category_id"], name: "index_categories_webclips_on_category_id"
+  add_index "categories_webclips", ["webclip_id"], name: "index_categories_webclips_on_webclip_id"
+
   create_table "webclips", force: true do |t|
     t.string   "name"
     t.string   "link"
-    t.integer  "order"
+    t.integer  "position"
     t.string   "description"
-    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

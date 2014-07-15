@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -7,7 +6,7 @@
 
 <p>
   <strong>Webclip:</strong>
-  <%= @category.webclip_id %>
+  <%= @category.webclips.map(&:name).join(', ') %>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |

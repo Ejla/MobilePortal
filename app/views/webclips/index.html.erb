@@ -1,6 +1,6 @@
 <h1>Listing webclips</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -17,9 +17,9 @@
       <tr>
         <td><%= webclip.name %></td>
         <td><%= webclip.link %></td>
-        <td><%= webclip.order %></td>
+        <td><%= webclip.position %></td>
         <td><%= webclip.description %></td>
-        <td><%= webclip.category_id %></td>
+        <td><%= webclip.categories.map(&:name).join(', ') %></td>
         <td><%= link_to 'Show', webclip %></td>
         <td><%= link_to 'Edit', edit_webclip_path(webclip) %></td>
         <td><%= link_to 'Destroy', webclip, method: :delete, data: { confirm: 'Are you sure?' } %></td>

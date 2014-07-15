@@ -1,11 +1,10 @@
 class CreateCategoriesWebclips < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :categories_webclips do |t|
       t.integer :category_id
       t.integer :webclip_id
     end
-  end
-  def self.down
-    drop_table :categories_webclips
+    add_index :categories_webclips, :category_id
+    add_index :categories_webclips, :webclip_id
   end
 end

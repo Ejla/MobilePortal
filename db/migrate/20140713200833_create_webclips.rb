@@ -3,9 +3,8 @@ class CreateWebclips < ActiveRecord::Migration
     create_table :webclips do |t|
       t.string :name
       t.string :link
-      t.integer :order
+      t.integer :position
       t.string :description
-      t.integer :category_id
 
       t.timestamps
     end
