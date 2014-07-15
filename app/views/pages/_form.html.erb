@@ -10,7 +10,16 @@ wrapper: :horizontal_form,
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.association :webclips %>
+    <%#= f.association :webclips %>
+    <hr />
+    <% f.object.page_webclips.build %>
+    <%= f.simple_fields_for :page_webclips do |w| %>
+      <%#= w.object.webclip.name %>
+      <%= w.association :webclip %>
+      <%= w.input :position %>
+      <hr />
+    <% end %>
+    
   </div>
 
   <div class="form-actions">

@@ -69,6 +69,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:name, :position, :webclip_ids => [])
+      params.require(:page).permit(:name, :webclip_ids => [], :page_webclips_attributes => [:id, :webclip_id, :position])
     end
 end
