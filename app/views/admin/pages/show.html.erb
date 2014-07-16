@@ -10,11 +10,11 @@
           <h5><%= webclip.name %></h5>
           <% end %>
         </div>
-        <span><%= link_to 'Edit', edit_webclip_path(webclip) %></span>
+        <span><%= link_to 'Edit', edit_admin_webclip_path(webclip) %></span>
       </li>
       
   <% end %>
 </ul>
 <br/><br/>
-<%= link_to 'Edit Page', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<%= link_to 'Edit Page', edit_admin_page_path(@page) %> |
+<%= link_to 'Back', admin_pages_path %>

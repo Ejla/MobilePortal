@@ -19,9 +19,9 @@
         <td><%= webclip.description %></td>
         <td><%= webclip.pages.map(&:name).join(', ') %></td>
         <td><%= image_tag(webclip.image, :default)%></td>
-        <td><%= link_to 'Show', webclip %></td>
-        <td><%= link_to 'Edit', edit_webclip_path(webclip) %></td>
-        <td><%= link_to 'Destroy', webclip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_webclip_path(webclip) %></td>
+        <td><%= link_to 'Edit', edit_admin_webclip_path(webclip) %></td>
+        <td><%= link_to 'Destroy', admin_webclip_path(webclip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Webclip', new_webclip_path %>
+<%= link_to 'New Webclip', new_admin_webclip_path %>

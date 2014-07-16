@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class Admin::PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   # GET /pages
@@ -28,8 +28,8 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
-        format.json { render :show, status: :created, location: @page }
+        format.html { redirect_to admin_page_path(@page), notice: 'Page was successfully created.' }
+        format.json { render :show, status: :created, location: admin_page_path(@page) }
       else
         format.html { render :new }
         format.json { render json: @page.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
-        format.json { render :show, status: :ok, location: @page }
+        format.html { redirect_to admin_page_path(@page), notice: 'Page was successfully updated.' }
+        format.json { render :show, status: :ok, location: admin_page_path(@page) }
       else
         format.html { render :edit }
         format.json { render json: @page.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class PagesController < ApplicationController
   def destroy
     @page.destroy
     respond_to do |format|
-      format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }
+      format.html { redirect_to admin_pages_url, notice: 'Page was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:name, :webclip_ids => [], :page_webclips_attributes => [:id, :webclip_id, :position])
+      params.require(:page).permit(:name, :page_webclips_attributes => [:id, :webclip_id, :position])
     end
 end

@@ -1,4 +1,4 @@
-class WebclipsController < ApplicationController
+class Admin::WebclipsController < ApplicationController
   before_action :set_webclip, only: [:show, :edit, :update, :destroy]
 
   # GET /webclips
@@ -28,8 +28,8 @@ class WebclipsController < ApplicationController
 
     respond_to do |format|
       if @webclip.save
-        format.html { redirect_to @webclip, notice: 'Webclip was successfully created.' }
-        format.json { render :show, status: :created, location: @webclip }
+        format.html { redirect_to admin_webclip_path(@webclip), notice: 'Webclip was successfully created.' }
+        format.json { render :show, status: :created, location: admin_webclip_path(@webclip) }
       else
         format.html { render :new }
         format.json { render json: @webclip.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class WebclipsController < ApplicationController
   def update
     respond_to do |format|
       if @webclip.update(webclip_params)
-        format.html { redirect_to @webclip, notice: 'Webclip was successfully updated.' }
-        format.json { render :show, status: :ok, location: @webclip }
+        format.html { redirect_to admin_webclip_path(@webclip), notice: 'Webclip was successfully updated.' }
+        format.json { render :show, status: :ok, location: admin_webclip_path(@webclip) }
       else
         format.html { render :edit }
         format.json { render json: @webclip.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class WebclipsController < ApplicationController
   def destroy
     @webclip.destroy
     respond_to do |format|
-      format.html { redirect_to webclips_url, notice: 'Webclip was successfully destroyed.' }
+      format.html { redirect_to admin_webclips_url, notice: 'Webclip was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

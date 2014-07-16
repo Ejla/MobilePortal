@@ -27,8 +27,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :development do
   gem 'spring'
-  gem "better_errors"
-  gem "binding_of_caller"
+  # gem "better_errors"
+  # gem "binding_of_caller"
+  gem 'quiet_assets'
+  # gem 'thin'
+  gem 'rails-erd'
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password

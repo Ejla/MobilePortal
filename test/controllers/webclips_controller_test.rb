@@ -44,6 +44,6 @@ class WebclipsControllerTest < ActionController::TestCase
       delete :destroy, id: @webclip
     end
 
-    assert_redirected_to webclips_path
+    assert_redirected_to admin_webclips_path
   end
 end

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  resources :images
-
-  resources :pages
-
-  resources :webclips
-
-  get 'home/index'
+  namespace :admin do
+    resources :images
+    resources :pages
+    resources :webclips
+    get '/' => 'dashboard#index'
+  end
+  
+  
   
   root 'home#index'
 

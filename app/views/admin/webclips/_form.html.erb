@@ -1,4 +1,5 @@
-<%= simple_form_for @page, html: { class: 'form-horizontal' },
+<!-- html: { class: 'form-inline' } za dodavanje klase formularu ubaciti u zagradu iza @webclip -->
+<%= simple_form_for [:admin, @webclip], html: { class: 'form-horizontal' },
 wrapper: :horizontal_form,
   wrapper_mappings: {
     check_boxes: :horizontal_radio_and_checkboxes,
@@ -10,22 +11,16 @@ wrapper: :horizontal_form,
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%#= f.association :webclips %>
-    <hr />
-    <% f.object.page_webclips.build %>
-    <%= f.simple_fields_for :page_webclips do |w| %>
-      <%#= w.object.webclip.name %>
-      <%= w.association :webclip %>
-      <%= w.input :position %>
-      <hr />
-    <% end %>
-    
+    <%= f.input :link %>
+    <%= f.input :description %>
+    <%= f.association :pages %>
+    <%= f.association :image %>
   </div>
 
   <div class="form-actions">
     <div class="row">
       <div class="col-sm-offset-3 col-sm-9">
-        <%= f.button :submit, 'Spremi', class: 'btn btn-default' %>
+        <%= f.button :submit, class: 'btn btn-default' %>
       </div>
     </div>
   </div>

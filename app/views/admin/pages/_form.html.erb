@@ -1,0 +1,34 @@
+<%= simple_form_for([:admin, @page], html: { class: 'form-horizontal' },
+wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%#= f.association :webclips %>
+    <hr />
+    <% f.object.page_webclips.build %>
+    <%= f.simple_fields_for :page_webclips do |w| %>
+      <%#= w.object.webclip.try(:name) %>
+      <%= w.association :webclip %>
+      <%#= w.input :webclip_id %>
+      <%= w.input :position %>
+      <hr />
+    <% end %>
+    
+  </div>
+
+  <div class="form-actions">
+    <div class="row">
+      <div class="col-sm-offset-3 col-sm-9">
+        <%= f.button :submit, 'Spremi', class: 'btn btn-default' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<br/>

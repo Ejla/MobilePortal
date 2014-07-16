@@ -1,4 +1,4 @@
-class ImagesController < ApplicationController
+class Admin::ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images
@@ -28,8 +28,8 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
-        format.json { render :show, status: :created, location: @image }
+        format.html { redirect_to admin_image_path(@image), notice: 'Image was successfully created.' }
+        format.json { render :show, status: :created, location: admin_image_path(@image) }
       else
         format.html { render :new }
         format.json { render json: @image.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class ImagesController < ApplicationController
   def update
     respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to @image, notice: 'Image was successfully updated.' }
-        format.json { render :show, status: :ok, location: @image }
+        format.html { redirect_to admin_image_path(@image), notice: 'Image was successfully updated.' }
+        format.json { render :show, status: :ok, location: admin_image_path(@image) }
       else
         format.html { render :edit }
         format.json { render json: @image.errors, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class ImagesController < ApplicationController
   def destroy
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to images_url, notice: 'Image was successfully destroyed.' }
+      format.html { redirect_to admin_images_url, notice: 'Image was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
