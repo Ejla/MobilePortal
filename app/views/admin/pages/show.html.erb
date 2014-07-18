@@ -6,7 +6,7 @@
       <li>
         <div>
           <%= link_to webclip.link do %>
-          <%= image_tag(webclip.image, :default)%>
+          <%= image_base_64_tag(webclip.image, :default)%>
           <h5><%= webclip.name %></h5>
           <% end %>
         </div>

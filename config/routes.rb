@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
+  end
+
+  namespace :admin do
     resources :images
     resources :pages
+    resources :portals, only: [:edit, :update]
     resources :webclips
     get '/' => 'dashboard#index'
   end

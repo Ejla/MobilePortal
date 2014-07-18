@@ -1,5 +1,5 @@
-module ImagesHelper
-  def image_tag(image, size=:default)
+module Admin::ImagesHelper
+  def image_base_64_tag(image, size=:default)
     return 'no image' if image.blank?
     width = 100 if size == :default
     width = 300 if size == :large

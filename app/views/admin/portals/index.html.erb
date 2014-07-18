@@ -1,0 +1,35 @@
+<h1>Listing admin_portals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Logo image</th>
+      <th>Bg css</th>
+      <th>Bg image</th>
+      <th>Layout</th>
+      <th>Font</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portals.each do |admin_portal| %>
+      <tr>
+        <td><%= admin_portal.title %></td>
+        <td><%= admin_portal.logo_image_id %></td>
+        <td><%= admin_portal.bg_css %></td>
+        <td><%= admin_portal.bg_image_id %></td>
+        <td><%= admin_portal.layout %></td>
+        <td><%= admin_portal.font %></td>
+        <td><%= link_to 'Show', [:admin, admin_portal] %></td>
+        <td><%= link_to 'Edit', edit_admin_portal_path(admin_portal) %></td>
+        <td><%= link_to 'Destroy', [:admin, admin_portal], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Portal', new_admin_portal_path %>

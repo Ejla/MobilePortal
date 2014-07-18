@@ -18,7 +18,7 @@
         <td><%= webclip.link %></td>
         <td><%= webclip.description %></td>
         <td><%= webclip.pages.map(&:name).join(', ') %></td>
-        <td><%= image_tag(webclip.image, :default)%></td>
+        <td><%= image_base_64_tag(webclip.image, :default)%></td>
         <td><%= link_to 'Show', admin_webclip_path(webclip) %></td>
         <td><%= link_to 'Edit', edit_admin_webclip_path(webclip) %></td>
         <td><%= link_to 'Destroy', admin_webclip_path(webclip), method: :delete, data: { confirm: 'Are you sure?' } %></td>

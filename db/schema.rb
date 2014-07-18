@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140715151239) do
+ActiveRecord::Schema.define(version: 20140718140038) do
 
   create_table "images", force: true do |t|
     t.text     "base64_string"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 20140715151239) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "portals", force: true do |t|
+    t.string   "title"
+    t.integer  "logo_image_id"
+    t.string   "bg_css"
+    t.integer  "bg_image_id"
+    t.string   "layout"
+    t.string   "font"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "theme"
   end
 
   create_table "webclips", force: true do |t|
