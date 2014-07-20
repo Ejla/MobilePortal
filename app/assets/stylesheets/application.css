@@ -29,6 +29,10 @@ a:hover, a:active{
   text-decoration: underline;
   background-color: transparent;
 }
+a:active{
+  color: #43D483;
+}
+
 .navbar-inverse {
 background-color: #2C3E50;
 border-bottom: none;

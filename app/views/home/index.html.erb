@@ -1,7 +1,135 @@
-<h1>Home Index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MobilePortal</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="frontend navy_dark_theme">
+  <div class="wrapper">
+    <div class="header_wrapper_1">
+      <div class="container">
+        <%= flash_messages %>
+        <h1><a href="#"><%= Portal.first.try(:title).present? ? Portal.first.title : 'Nema naslova' %></a></h1>
+      </div>
+    </div>
+    <div class="header_wrapper_2">
+      <a href="#" class="link_up"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+      <a href="#" class="link_down"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+      <div class="container">
+        <h2><%= Page.first.try(:name).present? ? Page.first.name : 'Nema naslova' %></h2>
+      </div>
+    </div>
+  
 
-<ul>
-  <li><%= link_to 'Webclips', admin_webclips_path %></li>
-  <li><%= link_to 'Pages', admin_pages_path %></li>
-</ul>
+  
+    <div class="body_wrapper thumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3> 
+                </a>
+              </div>
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3> 
+                </a>
+              </div>
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3> 
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3> 
+                </a>
+              </div>
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3> 
+                </a>
+              </div>
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3> 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  <div class="header_wrapper_2">
+    <a href="#" class="link_up"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+    <a href="#" class="link_down"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+    <div class="container">
+      <h2><%= Page.first.try(:name).present? ? Page.first.name : 'Nema naslova' %></h2>
+    </div>
+  </div>
+  
+    <div class="body_wrapper list">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <a class="webclip">
+              <%= image_tag("webclip_image.jpg") %>
+              <h3>Webclip Name</h3>
+              <p>Lorem ipsum dolor sit amet consequitur...</p>
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a class="webclip">
+              <%= image_tag("webclip_image.jpg") %>
+              <h3>Webclip Name</h3>
+              <p>Lorem ipsum dolor sit amet consequitur...</p>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <a class="webclip">
+              <%= image_tag("webclip_image.jpg") %>
+              <h3>Webclip Name</h3>
+              <p>Lorem ipsum dolor sit amet consequitur...</p>
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a class="webclip">
+              <%= image_tag("webclip_image.jpg") %>
+              <h3>Webclip Name</h3>
+              <p>Lorem ipsum dolor sit amet consequitur...</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- wrapper end -->
+  
+  
+  <div class="footer_wrapper">
+    <div class="container">
+      <nav>
+        <a><%= session[:username].present? ? session[:username] : 'Gost' %></a>
+        <a><%= session[:username].present? ? session[:username] : 'Gost' %></a>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>

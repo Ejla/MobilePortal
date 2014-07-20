@@ -1,0 +1,103 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*  NAVY DARK THEME */
+
+body.frontend.navy_dark_theme{
+  color: #2C3E50; /* text and dark backgrounds */
+  background-color: #ECF0F1; /* body bg and links on dark backgrounds */
+}
+body.frontend.navy_dark_theme a, body.frontend.navy_dark_theme a:visited {
+  color: #2C3E50;
+}
+body.frontend.navy_dark_theme a.webclip:hover{
+  background: rgba(255, 255, 255, 0.5); 
+}
+body.frontend.navy_dark_theme a.webclip:active{
+  opacity: .8;
+  background: rgba(255, 255, 255, 0.8); 
+}
+body.frontend.navy_dark_theme .header_wrapper_1{
+  background-color: #0E1C24;
+}
+body.frontend.navy_dark_theme .header_wrapper_1 h1 a, body.frontend.navy_dark_theme .header_wrapper_1 h1 a:visited{
+  color: #D5DCDD;
+}
+body.frontend.navy_dark_theme .header_wrapper_1 h1 a:hover{
+  opacity: .8;
+}
+body.frontend.navy_dark_theme .header_wrapper_1 h1 a:active{
+  opacity: .6;
+}
+body.frontend.navy_dark_theme .header_wrapper_2{
+  background-color: #2C3E50;
+  border-top: 1px solid #2C3E50; /* borders and dark shadows */
+  border-bottom: 1px solid #2C3E50;
+}
+body.frontend.navy_dark_theme .header_wrapper_2 h2{
+  color: #ECF0F1;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #1a242f;
+}
+body.frontend.navy_dark_theme .footer_wrapper{
+  background-color: #2C3E50;
+  border-top: 1px solid #1a242f;
+}
+body.frontend.navy_dark_theme .webclip{
+  border-radius: 4px;
+}
+body.frontend.navy_dark_theme .webclip h3{
+  text-shadow: 1px 1px 1px #fff;
+}
+body.frontend.navy_dark_theme .webclip img{
+  border-radius: 4px;
+}
+body.frontend.navy_dark_theme .thumbs .webclip img{
+  box-shadow: 0 3px 3px -1px #444;
+}
+body.frontend.navy_dark_theme .footer_wrapper nav a{
+  display: inline-block;
+  line-height: 32px;
+  margin: 0 5px 5px 0;
+  padding: 0 8px;
+  color: #ECF0F1;
+  font-weight: 600;
+  border-radius: 4px;
+  text-shadow: 1px 1px 1px #1a242f;
+}
+body.frontend.navy_dark_theme .footer_wrapper nav a:hover{
+  text-decoration: none; 
+  cursor: pointer;
+  background-color: #fff;
+  color: #2C3E50;
+  opacity: .3;
+  text-shadow: none;
+}
+body.frontend.navy_dark_theme .footer_wrapper nav a:active {
+  opacity: .6;
+}
+body.frontend.navy_dark_theme .header_wrapper_2 a.link_up, body.frontend.navy_dark_theme .header_wrapper_2 a.link_down{
+  color: #fff;
+}
+body.frontend.navy_dark_theme .list .webclip {
+  box-shadow: 0 0 5px #ddd;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+body.frontend.navy_dark_theme .body_wrapper:before {
+position: absolute;
+display: block;
+width: 0;
+height: 0;
+border-color: rgba(0, 0, 0, 0);
+border-style: solid;
+border-width: 10px;
+border-bottom-width: 0;
+border-top-color: #2C3E50;
+top: 0;
+left: 50%;
+content: "";
+margin-left: -10px;
+}
+
