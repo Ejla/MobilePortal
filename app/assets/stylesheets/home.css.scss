@@ -115,9 +115,10 @@ body.frontend.default_theme a.webclip:active{
   opacity: .8;
   background: rgba(255, 255, 255, 0.8); 
 }
-body.frontend.default_theme .header_wrapper_1{
-  background-color: #ECF0F1;
+p, ol, ul{
+  font-family: inherit;
 }
+
 body.frontend.default_theme .header_wrapper_1 h1 a:hover{
   opacity: .8;
 }

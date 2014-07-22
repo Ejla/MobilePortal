@@ -5,121 +5,77 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/theme_style' %>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Open+Sans:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
 </head>
-<body class="frontend navy_dark_theme">
+
+<body class="frontend <%= Portal.first.theme.present? ? Portal.first.theme : 'default' %>_theme">
   <div class="wrapper">
+    
     <div class="header_wrapper_1">
       <div class="container">
         <%= flash_messages %>
         <h1><a href="#"><%= Portal.first.try(:title).present? ? Portal.first.title : 'Nema naslova' %></a></h1>
       </div>
     </div>
+    
+    <% @pages.each do |page| %>
     <div class="header_wrapper_2">
       <a href="#" class="link_up"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
       <a href="#" class="link_down"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
       <div class="container">
-        <h2><%= Page.first.try(:name).present? ? Page.first.name : 'Nema naslova' %></h2>
+        <h2><%= page.name %></h2>
       </div>
     </div>
-  
+    <% if Portal.first.layout == "thumbs" %>
+    <div class="body_wrapper thumbs">
+      <div class="container">  
+        <% page.webclips.each_slice(6) do |slice_6| %>
+        <div class="row"> 
+          <% slice_6.each_slice(3) do |slice_3| %>
+          <div class="col-sm-6">
+            <div class="row">
+              <% slice_3.each do |webclip| %>
+              <div class="col-xs-4">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3><%= webclip.name %></h3> 
+                </a>
+              </div>
+              <% end %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <% else %>
+    
+    <div class="body_wrapper list">
+      <div class="container">  
+          <% page.webclips.each_slice(2) do |slice_2| %>
+            <div class="row">
+              <% slice_2.each do |webclip| %>
+              <div class="col-sm-6">
+                <a class="webclip">
+                  <%= image_tag("webclip_image.jpg") %>
+                  <h3>Webclip Name</h3>
+                  <p>Lorem ipsum dolor sit amet consequitur...</p>
+                </a>
+              </div>
+              <% end %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    
+    <% end %> 
+    <% end %> 
 
   
-    <div class="body_wrapper thumbs">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
-                  <h3>Webclip Name</h3> 
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
-                  <h3>Webclip Name</h3> 
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
-                  <h3>Webclip Name</h3> 
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <div class="row">
-              <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
-                  <h3>Webclip Name</h3> 
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
-                  <h3>Webclip Name</h3> 
-                </a>
-              </div>
-              <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
-                  <h3>Webclip Name</h3> 
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-  
-  <div class="header_wrapper_2">
-    <a href="#" class="link_up"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
-    <a href="#" class="link_down"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
-    <div class="container">
-      <h2><%= Page.first.try(:name).present? ? Page.first.name : 'Nema naslova' %></h2>
-    </div>
-  </div>
-  
-    <div class="body_wrapper list">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-            <a class="webclip">
-              <%= image_tag("webclip_image.jpg") %>
-              <h3>Webclip Name</h3>
-              <p>Lorem ipsum dolor sit amet consequitur...</p>
-            </a>
-          </div>
-          <div class="col-sm-6">
-            <a class="webclip">
-              <%= image_tag("webclip_image.jpg") %>
-              <h3>Webclip Name</h3>
-              <p>Lorem ipsum dolor sit amet consequitur...</p>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <a class="webclip">
-              <%= image_tag("webclip_image.jpg") %>
-              <h3>Webclip Name</h3>
-              <p>Lorem ipsum dolor sit amet consequitur...</p>
-            </a>
-          </div>
-          <div class="col-sm-6">
-            <a class="webclip">
-              <%= image_tag("webclip_image.jpg") %>
-              <h3>Webclip Name</h3>
-              <p>Lorem ipsum dolor sit amet consequitur...</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div> <!-- wrapper end -->
   
   

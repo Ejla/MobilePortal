@@ -1,7 +1,9 @@
 <h1>Dashboard</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<p>Find me in app/views/layouts/application.html.erb</p>
 
 <ul>
   <li><%= link_to 'Webclips', admin_webclips_path %></li>
   <li><%= link_to 'Pages', admin_pages_path %></li>
+  <li><%= link_to 'Images', admin_images_path %></li>
+  <li><%= link_to 'Portal Settings', edit_admin_portal_path(Portal.first) %></li>
 </ul>

@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
   before_action :set_session
  
    def set_session
-     session[:username] = 'mirna'
-     session[:memberof] = ['marketing', 'sales']
+     session[:username] = 'default_user'
+     session[:memberof] = ['default_group']
      session[:admin] = true
-     session[:default_page_name] = 'marketing'
+     # session[:default_page_name] = 'marketing'
    end
 end

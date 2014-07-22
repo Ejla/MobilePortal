@@ -69,6 +69,6 @@ class Admin::PortalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_portal_params
-      params.require(:portal).permit(:title, :logo_image_id, :bg_css, :bg_image_id, :layout, :font)
+      params.require(:portal).permit(:title, :logo_image_id, :bg_css, :bg_image_id, :layout, :font, :theme)
     end
 end

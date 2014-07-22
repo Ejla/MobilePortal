@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   layout false
   def index
-    # flash[:error] = 'Invalid email/password combination'
+    @pages = Page.order(:name)
   end
 end
