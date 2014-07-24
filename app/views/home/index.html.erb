@@ -16,7 +16,15 @@
     <div class="header_wrapper_1">
       <div class="container">
         <%= flash_messages %>
-        <h1><a href="#"><%= Portal.first.try(:title).present? ? Portal.first.title : 'Nema naslova' %></a></h1>
+        <h1>
+          <% if @logo_image.present? %> 
+          <%= image_base_64_tag @logo_image %>
+          <% elsif Portal.first.try(:title).present? %>
+          <%= Portal.first.title %>
+          <% else %>
+          My Mobile Portal
+          <% end %>
+        </h1>
       </div>
     </div>
     
@@ -38,10 +46,10 @@
             <div class="row">
               <% slice_3.each do |webclip| %>
               <div class="col-xs-4">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
+                <%= link_to webclip.link, class: "webclip", target: "_blank" do %>
+                  <%= image_base_64_tag webclip.image %>
                   <h3><%= webclip.name %></h3> 
-                </a>
+                <% end %>
               </div>
               <% end %>
             </div>
@@ -59,11 +67,11 @@
             <div class="row">
               <% slice_2.each do |webclip| %>
               <div class="col-sm-6">
-                <a class="webclip">
-                  <%= image_tag("webclip_image.jpg") %>
+                <%= link_to webclip.link, class: "webclip", target: "_blank" do %>                  
+                  <%= image_base_64_tag webclip.image %>
                   <h3>Webclip Name</h3>
                   <p>Lorem ipsum dolor sit amet consequitur...</p>
-                </a>
+                <% end %>
               </div>
               <% end %>
             </div>

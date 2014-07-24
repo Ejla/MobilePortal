@@ -1,6 +1,6 @@
 module Admin::ImagesHelper
   def image_base_64_tag(image, size=:default)
-    return 'no image' if image.blank?
+    return image_tag("webclip_image.jpg") if image.blank?
     width = 100 if size == :default
     width = 300 if size == :large
 
