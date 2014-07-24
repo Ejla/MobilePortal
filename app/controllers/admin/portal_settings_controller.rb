@@ -1,30 +1,30 @@
-class Admin::PortalsController < ApplicationController
-  before_action :set_admin_portal, only: [:show, :edit, :update, :destroy]
+class Admin::PortalSettingsController < ApplicationController
+  before_action :set_admin_portal_setting, only: [:show, :edit, :update, :destroy]
 
-  # GET /admin/portals
-  # GET /admin/portals.json
+  # GET /admin/portal_settings
+  # GET /admin/portal_settings.json
   def index
-    @portals = Portal.all
+    @portals = PortalSetting.all
   end
 
-  # GET /admin/portals/1
-  # GET /admin/portals/1.json
+  # GET /admin/portal_settings/1
+  # GET /admin/portal_settings/1.json
   def show
   end
 
-  # GET /admin/portals/new
+  # GET /admin/portal_settings/new
   def new
-    @portal = Portal.new
+    @portal = PortalSetting.new
   end
 
-  # GET /admin/portals/1/edit
+  # GET /admin/portal_settings/1/edit
   def edit
   end
 
-  # POST /admin/portals
-  # POST /admin/portals.json
+  # POST /admin/portal_settings
+  # POST /admin/portal_settings.json
   def create
-    @portal = Portal.new(admin_portal_params)
+    @portal = PortalSetting.new(admin_portal_setting_params)
 
     respond_to do |format|
       if @portal.save
@@ -37,11 +37,11 @@ class Admin::PortalsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /admin/portals/1
-  # PATCH/PUT /admin/portals/1.json
+  # PATCH/PUT /admin/portal_settings/1
+  # PATCH/PUT /admin/portal_settings/1.json
   def update
     respond_to do |format|
-      if @portal.update(admin_portal_params)
+      if @portal.update(admin_portal_setting_params)
         format.html { redirect_to [:admin], notice: 'Portal was successfully updated.' }
         format.json { render :show, status: :ok, location: @portal }
       else
@@ -51,24 +51,24 @@ class Admin::PortalsController < ApplicationController
     end
   end
 
-  # DELETE /admin/portals/1
-  # DELETE /admin/portals/1.json
+  # DELETE /admin/portal_settings/1
+  # DELETE /admin/portal_settings/1.json
   def destroy
     @portal.destroy
     respond_to do |format|
-      format.html { redirect_to admin_portals_url, notice: 'Portal was successfully destroyed.' }
+      format.html { redirect_to admin_portal_settings_url, notice: 'Portal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_admin_portal
-      @portal = Portal.find(params[:id])
+    def set_admin_portal_setting
+      @portal = PortalSetting.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_portal_params
-      params.require(:portal).permit(:title, :logo_image_id, :bg_css, :bg_image_id, :layout, :font, :theme)
+    def admin_portal_setting_params
+      params.require(:portal_setting).permit(:title, :logo_image_id, :bg_css, :bg_image_id, :layout, :font, :theme)
     end
 end

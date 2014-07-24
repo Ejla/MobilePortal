@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :images
-    resources :pages
-    resources :portals, only: [:edit, :update]
+    resources :pages do
+      member do
+        get 'remove_webclip/:webclip_id', action: :remove_webclip, as: :remove_webclip
+      end
+    end
+    resources :portal_settings, only: [:edit, :update]
     resources :webclips
     get '/' => 'dashboard#index'
   end

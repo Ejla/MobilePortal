@@ -1,5 +1,5 @@
 class Admin::PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: [:show, :edit, :update, :destroy, :remove_webclip]
 
   # GET /pages
   # GET /pages.json
@@ -61,6 +61,11 @@ class Admin::PagesController < ApplicationController
     end
   end
 
+  def remove_webclip
+    @page.page_webclips.where(webclip_id: params[:webclip_id]).destroy_all
+    redirect_to [:admin, @page], notice: "Webclip is removed from this page."
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page

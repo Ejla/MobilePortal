@@ -5,8 +5,8 @@
     <%= f.input :title %>
     <%= f.input :logo_image_id %>
     <%= f.input :layout, :collection => ["thumbs", "list"] %>
-    <%= f.input :theme, :collection => ["default", "mocca", "navy_dark"], :selected => "default" %>
-    <%= f.input :font, :collection => ["'Open Sans', sans-serif", "'Droid Serif', serif"], :selected => [0] %>
+    <%= f.input :theme, :collection => ["default", "mocca", "navy_dark"] %>
+    <%= f.input :font, :collection => ["'Open Sans', sans-serif", "'Droid Serif', serif"] %>
     <hr/>
     <h4>Custom styles (will override styles of selected theme)</h4>
     <%= f.input :bg_css %>
