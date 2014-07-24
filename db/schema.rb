@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718140038) do
+ActiveRecord::Schema.define(version: 20140724125808) do
 
   create_table "images", force: true do |t|
     t.text     "base64_string"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140718140038) do
     t.string   "tags"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
   end
 
   create_table "page_webclips", force: true do |t|
@@ -38,16 +39,16 @@ ActiveRecord::Schema.define(version: 20140718140038) do
     t.datetime "updated_at"
   end
 
-  create_table "portals", force: true do |t|
+  create_table "portal_settings", force: true do |t|
     t.string   "title"
     t.integer  "logo_image_id"
     t.string   "bg_css"
     t.integer  "bg_image_id"
     t.string   "layout"
     t.string   "font"
+    t.string   "theme"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "theme"
   end
 
   create_table "webclips", force: true do |t|
@@ -56,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140718140038) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "image_id"
+    t.integer  "webclip_icon_id"
   end
 
 end

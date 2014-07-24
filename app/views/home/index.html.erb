@@ -10,7 +10,7 @@
   
 </head>
 
-<body class="frontend <%= Portal.first.theme.present? ? Portal.first.theme : 'default' %>_theme">
+<body class="frontend <%= PortalSetting.first.theme.present? ? PortalSetting.first.theme : 'default' %>_theme">
   <div class="wrapper">
     
     <div class="header_wrapper_1">
@@ -19,8 +19,8 @@
         <h1>
           <% if @logo_image.present? %> 
           <%= image_base_64_tag @logo_image %>
-          <% elsif Portal.first.try(:title).present? %>
-          <%= Portal.first.title %>
+          <% elsif PortalSetting.first.try(:title).present? %>
+          <%= PortalSetting.first.title %>
           <% else %>
           My Mobile Portal
           <% end %>
@@ -36,7 +36,7 @@
         <h2><%= page.name %></h2>
       </div>
     </div>
-    <% if Portal.first.layout == "thumbs" %>
+    <% if PortalSetting.first.layout == "thumbs" %>
     <div class="body_wrapper thumbs">
       <div class="container">  
         <% page.webclips.each_slice(6) do |slice_6| %>
@@ -47,7 +47,7 @@
               <% slice_3.each do |webclip| %>
               <div class="col-xs-4">
                 <%= link_to webclip.link, class: "webclip", target: "_blank" do %>
-                  <%= image_base_64_tag webclip.image %>
+                  <%= image_base_64_tag webclip.webclip_icon %>
                   <h3><%= webclip.name %></h3> 
                 <% end %>
               </div>
@@ -68,7 +68,7 @@
               <% slice_2.each do |webclip| %>
               <div class="col-sm-6">
                 <%= link_to webclip.link, class: "webclip", target: "_blank" do %>                  
-                  <%= image_base_64_tag webclip.image %>
+                  <%= image_base_64_tag webclip.webclip_icon %>
                   <h3>Webclip Name</h3>
                   <p>Lorem ipsum dolor sit amet consequitur...</p>
                 <% end %>
@@ -90,8 +90,10 @@
   <div class="footer_wrapper">
     <div class="container">
       <nav>
-        <a><%= session[:username].present? ? session[:username] : 'Gost' %></a>
-        <a><%= session[:username].present? ? session[:username] : 'Gost' %></a>
+        <%= link_to 'Webclips', admin_webclips_path %>
+        <%= link_to 'Pages', admin_pages_path %>
+        <%= link_to 'Images', admin_images_path %>
+        <%= link_to 'Portal Settings', edit_admin_portal_path(PortalSetting.first) %>
       </nav>
     </div>
   </div>

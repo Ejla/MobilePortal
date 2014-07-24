@@ -69,6 +69,6 @@ class Admin::WebclipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def webclip_params
-      params.require(:webclip).permit(:name, :link, :position, :description, :image_id, :page_ids => [])
+      params.require(:webclip).permit(:name, :link, :position, :description, :webclip_icon_id, :page_ids => [])
     end
 end

@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Image</th>
+      <th>Type</th>
       <th>Width</th>
       <th>Height</th>
       <th>Name</th>
@@ -16,6 +17,7 @@
     <% @images.each do |image| %>
       <tr>
         <td><img src="data:image/jpg;base64,<%= image.base64_string %>" height="60" /></td>
+        <td><%= image.type %></td>
         <td><%= image.width %></td>
         <td><%= image.height %></td>
         <td><%= image.name %></td>

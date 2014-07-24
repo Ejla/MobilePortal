@@ -1,7 +1,7 @@
   <style type="text/css" media="screen">
-    body.frontend.<%= Portal.first.theme.present? ? Portal.first.theme : 'default' %>_theme {
-    background-color: <%= Portal.first.bg_css %>;
-    font-family: <%= escape_javascript(Portal.first.font).html_safe %>;
+    body.frontend.<%= PortalSetting.first.theme.present? ? PortalSetting.first.theme : 'default' %>_theme {
+    background-color: <%= PortalSetting.first.bg_css %>;
+    font-family: <%= escape_javascript(PortalSetting.first.font).html_safe %>;
   }
   
   </style>

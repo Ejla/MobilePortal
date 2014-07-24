@@ -9,6 +9,5 @@ class CreateImages < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_column :webclips, :image_id, :integer
   end
 end
