@@ -1,5 +1,6 @@
 <p>Chose which of the available Webclips you want to have displayed on this page: </p><br/>
 <h4>Available Webclips</h4>
+<div class="sortable1_wrapper">
 <ul id="sortable1" class="connectedSortable">
   <% @available_webclips.each do |webclip| %>
   <li class="ui-state-default">
@@ -10,11 +11,12 @@
   </li>
   <% end %>
 </ul>
-
+</div>
+<br/>
 <h4>Webclips on Page "<%= @page.name %>"</h4>
 <%#= debug @page.webclips %>
 <%= form_tag [:admin, @page], method: 'put' do %>
-
+<div class="sortable2_wrapper">
 <ul id="sortable2" class="connectedSortable">
 <% @page.webclips.each do |webclip| %>
   <li class="ui-state-default">
@@ -24,15 +26,17 @@
   </li>
 <% end %>
 </ul>
-
-<%= submit_tag 'Spremi', class: 'btn btn-default' %>
+</div>
+<br/>
+<%= submit_tag 'Save', class: 'btn btn-default' %>
 <% end %>
 
 <% content_for :javascript_per_page do %>
 <script type="text/javascript">
 $(function() {
   $( "#sortable1, #sortable2" ).sortable({
-    connectWith: ".connectedSortable"
+    connectWith: ".connectedSortable",
+    placeholder: "sortable_placeholder"
   }).disableSelection();
 });
 </script>

@@ -1,28 +1,22 @@
+<h3><%= @webclip.name %></h3>
 <p>
-  <strong>Name:</strong>
-  <%= @webclip.name %>
+  <strong>Icon:</strong>
+  <%= image_base_64_tag(@webclip.webclip_icon) %>
 </p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @webclip.link %>
-</p>
-
 <p>
   <strong>Description:</strong>
   <%= @webclip.description %>
 </p>
-
+<p>
+  <strong>Link:</strong>
+  <%= @webclip.link %>
+</p>
+<br/>
 <p>
   <strong>Pages:</strong>
   <%= @webclip.pages.map(&:name).join(', ') %>
 </p>
-
-<p>
-  <strong>XHTML Image Preview:</strong>
-  <%= image_base_64_tag(@webclip.webclip_icon) %>
-  
-</p>
+<br/>
 
 <%= link_to 'Edit', edit_admin_webclip_path(@webclip) %> |
 <%= link_to 'Back', admin_webclips_path %>

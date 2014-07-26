@@ -89,30 +89,41 @@ ul.page_show li div h5{
 ul.page_show li span a{
   color: #aaa;
 }
+.sortable1_wrapper{
+  border: 5px solid #eee;
+}
+.sortable2_wrapper{
+  border: 5px solid #5BC088;
+}
 #sortable1, #sortable2 {
-  border: 1px solid #eee;
-  min-height: 20px;
+  min-height: 132px;
   list-style-type: none;
   margin: 0;
   padding: 5px 0 0 0;
-  margin-bottom: 10px;
   overflow: auto;
-  
 }
+
 #sortable1 li, #sortable2 li {
   margin: 0 5px 5px 5px;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   font-size: 1.2em;
   float: left;
   background-image: none;
   background-color: #f5f5f5;
   border-color: #eee;
   text-align: center;
+  width: 120px;
 }
 #sortable1 li:hover, #sortable2 li:hover{
   cursor: move;
 }
-#sortable1 li img, #sortable2 li img{
+#sortable1 li img, #sortable2 li img, .page_show li img{
   height: 70px;
+}
+#sortable1 li.sortable_placeholder, #sortable2 li.sortable_placeholder{
+  width: 120px;
+  min-height: 120px;
+  background-color:  #EFF7F2;
+  border: 1px dashed #D3ECDE;
 }
   
