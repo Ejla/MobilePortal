@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui
  *= require bootstrap
  *= require_tree .
  *= require_self
@@ -88,3 +89,30 @@ ul.page_show li div h5{
 ul.page_show li span a{
   color: #aaa;
 }
+#sortable1, #sortable2 {
+  border: 1px solid #eee;
+  min-height: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0 0 0;
+  margin-bottom: 10px;
+  overflow: auto;
+  
+}
+#sortable1 li, #sortable2 li {
+  margin: 0 5px 5px 5px;
+  padding: 10px;
+  font-size: 1.2em;
+  float: left;
+  background-image: none;
+  background-color: #f5f5f5;
+  border-color: #eee;
+  text-align: center;
+}
+#sortable1 li:hover, #sortable2 li:hover{
+  cursor: move;
+}
+#sortable1 li img, #sortable2 li img{
+  height: 70px;
+}
+  

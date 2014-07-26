@@ -7,7 +7,6 @@
   <%= csrf_meta_tags %>
   <%= render 'layouts/theme_style' %>
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Open+Sans:400,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  
 </head>
 
 <body class="frontend <%= PortalSetting.first.theme.present? ? PortalSetting.first.theme : 'default' %>_theme">
@@ -30,8 +29,8 @@
     
     <% @pages.each do |page| %>
     <div class="header_wrapper_2">
-      <a href="#" class="link_up"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
-      <a href="#" class="link_down"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
+      <a href="#" class="prev-section"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
+      <a href="#" class="next-section"><span class="glyphicon glyphicon-circle-arrow-down"></span></a>
       <div class="container">
         <h2><%= page.name %></h2>
       </div>
@@ -87,8 +86,9 @@
   </div> <!-- wrapper end -->
   
   
-  <div class="footer_wrapper">
+  <div class="footer_wrapper">  
     <div class="container">
+      <a href="" class="back_to_top"><span class="glyphicon glyphicon-circle-arrow-up"></span></a>
       <nav>
         <%= link_to 'Webclips', admin_webclips_path %>
         <%= link_to 'Pages', admin_pages_path %>
@@ -97,5 +97,44 @@
       </nav>
     </div>
   </div>
+  
+  <script type="text/javascript">
+  $( document ).ready(function() {
+
+    jQuery.fn.extend({
+      scrollTo : function(speed, easing) {
+        return this.each(function() {
+          var targetOffset = $(this).offset().top;
+          $('html,body').animate({scrollTop: targetOffset}, speed, easing);
+        });
+      }
+    });
+
+    $('.next-section').click(function(e){
+      e.preventDefault();
+      var $this = $(this),
+      $next = $this.parent().next().next();
+    
+      $next.scrollTo(400, 'linear');
+    });
+
+    $('.prev-section').click(function(e){
+      e.preventDefault();
+      var $this = $(this),
+      $prev = $this.parent().prev().prev();
+
+      $prev.scrollTo(400, 'linear');
+    });
+
+    $('.back_to_top').click(function(e){
+      e.preventDefault();
+      $('html,body').scrollTo(400, 'linear');
+    });
+  
+    $( ".header_wrapper_2" ).first().find("a.prev-section").css( "display", "none" );
+    $( ".header_wrapper_2" ).last().find("a.next-section").css( "display", "none" );
+    
+  });
+  </script>
 </body>
 </html>

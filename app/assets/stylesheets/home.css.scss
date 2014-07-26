@@ -22,6 +22,7 @@ body.frontend .wrapper{
 }
 body.frontend .footer_wrapper{
   padding: 20px 0 15px 0;
+  position: relative;
 }
 body.frontend .header_wrapper_1 h1{
   text-align: center;
@@ -34,10 +35,10 @@ body.frontend .header_wrapper_1 img{
 body.frontend .header_wrapper_2{
   position: relative;
 }
-body.frontend .header_wrapper_2 a.link_up{
+.prev-section{
   left: 10px;
 }
-body.frontend .header_wrapper_2 a.link_down{
+.next-section, .back_to_top{
   right: 10px;
 }
 
@@ -49,21 +50,28 @@ body.frontend a:hover {
   cursor: pointer;
   text-decoration: none;
 }
-body.frontend .header_wrapper_2 a.link_up, body.frontend .header_wrapper_2 a.link_down{
+.prev-section, .next-section, .back_to_top{
  position: absolute;
  top: 10px;
  opacity: .2;
  font-size: 28px;
 }
-body.frontend .header_wrapper_2 a.link_up:hover, body.frontend .header_wrapper_2 a.link_down:hover {
+.back_to_top{
+ position: absolute;
+ top: 19px;
+ opacity: .2;
+ font-size: 28px;
+}
+.prev-section:hover, .next-section:hover, .back_to_top:hover {
   opacity: .5;
 }
-body.frontend .header_wrapper_2 a.link_up:active, body.frontend .header_wrapper_2 a.link_down:active {
+.prev-section:active, .next-section:active, .back_to_top:active {
   opacity: .8;
 }
 .webclip img{
   height: 70px;
 }
+
 
 /*  THUMBS LAYOUT */
 
@@ -184,7 +192,7 @@ body.frontend.default_theme .footer_wrapper nav a:hover{
 body.frontend.default_theme .footer_wrapper nav a:active {
   opacity: .6;
 }
-body.frontend.default_theme .header_wrapper_2 a.link_up, body.frontend.default_theme .header_wrapper_2 a.link_down{
+body.frontend.default_theme .header_wrapper_2 a.prev-section, body.frontend.default_theme .header_wrapper_2 a.next-section, body.frontend.default_theme .footer_wrapper a.back_to_top{
   color: #fff;
 }
 

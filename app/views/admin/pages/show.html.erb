@@ -10,7 +10,7 @@
           <h5><%= webclip.name %></h5>
           <% end %>
         </div>
-        <span><%= link_to 'Edit', edit_admin_webclip_path(webclip) %>  |  <%= link_to "X", remove_webclip_admin_page_path(@page, webclip) %></span>
+        <span><%= link_to 'Edit', edit_admin_webclip_path(webclip) %>  |  <%= link_to "X", remove_webclip_admin_page_path(@page, webclip), data: { confirm: 'Are you sure?' } %></span>
       </li>
       
   <% end %>
