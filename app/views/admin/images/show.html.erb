@@ -1,29 +1,41 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>XHTML Image Preview:</strong>
-  <img src="data:image/jpg;base64,<%= @image.base64_string %>" />
-</p>
-
-<p>
-  <strong>Width:</strong>
-  <%= @image.width %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @image.height %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @image.name %>
-</p>
-
-<p>
-  <strong>Tags:</strong>
-  <%= @image.tags %>
-</p>
-
-<%= link_to 'Edit', edit_admin_image_path(@image) %> |
-<%= link_to 'Back', admin_images_path %>
+<div class="row">
+  <div class="col-sm-9 col-sm-offset-3">
+    <h1>Image <%= @image.id %></h1>
+  </div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Image Name:</div>
+  <div class="col-sm-9"><%= @image.name %></div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Image Preview:</div>
+  <div class="col-sm-9"><img src="data:image/jpg;base64,<%= @image.base64_string %>" style="max-width: 100%"/></div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Tags:</div>
+  <div class="col-sm-9"><%= @image.tags %></div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Width:</div>
+  <div class="col-sm-9"><%= @image.width %> px</div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Height:</div>
+  <div class="col-sm-9"><%= @image.height %> px</div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-9 col-sm-offset-3">
+    <%= link_to 'Edit This Image', edit_admin_image_path(@image), class: "btn btn-default" %>
+  </div>
+</div>
+<br/>
+<div class="links">
+<%= link_to 'View All Images', admin_images_path %>
+</div>

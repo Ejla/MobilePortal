@@ -1,22 +1,35 @@
-<h3><%= @webclip.name %></h3>
-<p>
-  <strong>Icon:</strong>
-  <%= image_base_64_tag(@webclip.webclip_icon) %>
-</p>
-<p>
-  <strong>Description:</strong>
-  <%= @webclip.description %>
-</p>
-<p>
-  <strong>Link:</strong>
-  <%= @webclip.link %>
-</p>
+<div class="row">
+  <div class="col-sm-9 col-sm-offset-3">
+    <h1><%= @webclip.name %></h1>
+  </div>
+</div>
 <br/>
-<p>
-  <strong>Pages:</strong>
-  <%= @webclip.pages.map(&:name).join(', ') %>
-</p>
+<div class="row">
+  <div class="col-sm-3 show_label">Icon:</div>
+  <div class="col-sm-9"><%= image_base_64_tag(@webclip.webclip_icon) %></div>
+</div>
 <br/>
-
-<%= link_to 'Edit', edit_admin_webclip_path(@webclip) %> |
-<%= link_to 'Back', admin_webclips_path %>
+<div class="row">
+  <div class="col-sm-3 show_label">Description:</div>
+  <div class="col-sm-9"><%= @webclip.description %></div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Link:</div>
+  <div class="col-sm-9"><%= @webclip.link %></div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-3 show_label">Pages:</div>
+  <div class="col-sm-9"><%= @webclip.pages.map(&:name).join(', ') %></div>
+</div>
+<br/>
+<div class="row">
+  <div class="col-sm-9 col-sm-offset-3">
+    <%= link_to 'Edit Webclip', edit_admin_webclip_path(@webclip), class: 'btn btn-default' %>
+  </div>
+</div>
+<br/>
+<div class="links">
+<%= link_to 'View All Webclips', admin_webclips_path %>
+</div>

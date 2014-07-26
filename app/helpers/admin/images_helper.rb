@@ -4,7 +4,7 @@ module Admin::ImagesHelper
     tag(:img, src: "data:image/jpg;base64, #{image.try(:base64_string)}")
   end
   
-  def display_image_type(x)
-    x.type.blank? ? 'Portal Image' : x.type.to_s.titleize
+  def display_image_type(image)
+    image.type.blank? ? 'Portal Image' : image.type.to_s.titleize
   end
 end

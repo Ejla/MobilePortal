@@ -1,16 +1,27 @@
-<%= simple_form_for([:admin, @image]) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for([:admin, @image], html: { class: 'form-horizontal' },
+wrapper: :horizontal_form,
+wrapper_mappings: {
+  check_boxes: :horizontal_radio_and_checkboxes,
+  radio_buttons: :horizontal_radio_and_checkboxes,
+  file: :horizontal_file_input,
+  boolean: :horizontal_boolean
+  }) do |f| %>
+<%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :type, as: :select, :collection => [["Webclip Icon", "WebclipIcon"], ["Portal Image", nil]], :include_blank => false %>
-    <%= f.input :base64_string %>
-    <%= f.input :width %>
-    <%= f.input :height %>
-    <%= f.input :name %>
-    <%= f.input :tags %>
+<div class="form-inputs">
+  <%= f.input :name %>
+  <%= f.input :base64_string%>
+  <%= f.input :type, as: :select, :collection => [["Webclip Icon", "WebclipIcon"], ["Portal Image", nil]], :include_blank => false %>
+  <%= f.input :width %>
+  <%= f.input :height %>
+  <%= f.input :tags %>
+</div>
+<div class="row">
+  <div class="col-sm-offset-3 col-sm-9">
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
+<br/>
 <% end %>
