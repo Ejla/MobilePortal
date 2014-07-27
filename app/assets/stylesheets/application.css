@@ -106,7 +106,7 @@ ul.page_show li p a:first-child{
   border: 5px solid #5BC088;
 }
 #sortable1, #sortable2 {
-  min-height: 132px;
+  min-height: 152px;
   list-style-type: none;
   margin: 0;
   padding: 5px 0 0 0;
@@ -114,15 +114,17 @@ ul.page_show li p a:first-child{
 }
 
 #sortable1 li, #sortable2 li {
-  margin: 0 5px 10px 5px;
+  margin: 0 5px 5px 5px;
   padding: 10px 10px 5px 10px;
   font-size: 1.2em;
-  display: inline-block;
+  float: left;
   background-image: none;
   background-color: #f5f5f5;
   border-color: #eee;
   text-align: center;
   width: 120px;
+  height: 125px;
+  overflow: hidden;
 }
 #sortable1 li:hover, #sortable2 li:hover{
   cursor: move;
