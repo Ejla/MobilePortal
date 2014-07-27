@@ -9,7 +9,10 @@
           <%= image_base_64_tag(webclip.webclip_icon)%>
           <h5><%= webclip.name %></h5>
         </div>
-        <span><%= link_to 'Edit', edit_admin_webclip_path(webclip) %>  |  <%= link_to "X", remove_webclip_admin_page_path(@page, webclip), data: { confirm: 'Are you sure?' } %></span>
+        <p>
+        <%= link_to 'Edit', edit_admin_webclip_path(webclip) %>
+        <%= link_to "Remove", remove_webclip_admin_page_path(@page, webclip), data: { confirm: 'Are you sure?' } %>
+        </p>
       </li>
       
   <% end %>

@@ -9,14 +9,14 @@ wrapper: :horizontal_form,
   } do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs form-webclip">
     <%= f.input :name %>
     <%= f.input :link %>
     <%= f.input :description %>
-    <%= f.association :pages %>
-    <%= f.association :webclip_icon %>
+    <%= f.association :pages, as: :check_boxes %>
+    <%= f.association :webclip_icon, as: :radio_buttons, label_method: :icon_label %>
   </div>
-
+<br/>
   <div class="form-actions">
     <div class="row">
       <div class="col-sm-offset-3 col-sm-9">

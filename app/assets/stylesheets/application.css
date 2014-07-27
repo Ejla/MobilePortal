@@ -76,7 +76,7 @@ ul.page_show{
 }
 ul.page_show li{
   display: inline-block;
-  margin: 0 10px 10px 0;
+  margin: 0 10px 20px 0;
   text-align: center;
 }
 ul.page_show li div{
@@ -84,12 +84,20 @@ ul.page_show li div{
   padding: 10px;
   border: 1px solid #eee;
   background-color: #f5f5f5;
+  margin-bottom: 2px;
 }
 ul.page_show li div h5{
   text-align: center;
 }
-ul.page_show li span a{
-  color: #aaa;
+ul.page_show li p a{
+  border: 1px solid #eee;
+  background-color: #f5f5f5;
+  float: right;
+  width: 59%;
+}
+ul.page_show li p a:first-child{
+  float: left;
+  width: 39%;
 }
 .sortable1_wrapper{
   border: 5px solid #eee;
@@ -106,10 +114,10 @@ ul.page_show li span a{
 }
 
 #sortable1 li, #sortable2 li {
-  margin: 0 5px 5px 5px;
+  margin: 0 5px 10px 5px;
   padding: 10px 10px 5px 10px;
   font-size: 1.2em;
-  float: left;
+  display: inline-block;
   background-image: none;
   background-color: #f5f5f5;
   border-color: #eee;
@@ -146,6 +154,30 @@ ul.page_show li span a{
 textarea.form-control#image_base64_string{
   height: 200px;
 }
+.form-webclip .radio label > input{ /* HIDE RADIO */
+  display:none;
+}
+.webclip_webclip_icon .inner-wrapper{
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  padding: 10px 0 20px 0;
+  max-height: 180px;
+  overflow-y: scroll;
+  -moz-box-shadow: inset 0 0 8px #ccc;
+  -webkit-box-shadow: inset 0 0 8px #ccc;
+  box-shadow: inset 0 0 8px #ccc;
+}
+.form-webclip .radio label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+.form-webclip .radio label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+.webclip_webclip_icon span.radio{
+  display: inline-block;
+}
+
 @media (max-width: 767px){
   .show_label{
     text-align: left;

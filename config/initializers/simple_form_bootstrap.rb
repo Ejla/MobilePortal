@@ -87,12 +87,14 @@ SimpleForm.setup do |config|
     b.use :placeholder
 
     b.use :label, class: 'col-sm-3 control-label'
-
-    b.wrapper tag: 'div', class: 'col-sm-9' do |ba|
+    
+    b.wrapper tag: 'div', class: 'col-sm-9' do |wr|
+    wr.wrapper tag: 'div', class: 'inner-wrapper' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
       ba.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
     end
+  end
   end
 
   config.wrappers :inline_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|

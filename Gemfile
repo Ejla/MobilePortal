@@ -33,7 +33,7 @@ group :development do
   # gem 'thin'
   gem 'rails-erd'
   gem 'pry-rails'
-  gem 'seed_dump'
+  gem 'seed_dump' #rake db:seed:dump
 end
 
 # Use ActiveModel has_secure_password
