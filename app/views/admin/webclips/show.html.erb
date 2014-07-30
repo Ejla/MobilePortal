@@ -26,26 +26,26 @@
 <br/>
 <div class="row">
   <div class="col-sm-3 show_label">Webclip Preview:</div>
-    <div class="col-sm-9">
-      <div class="frontend <%= PortalSetting.first.theme.present? ? PortalSetting.first.theme : 'default' %>_theme " style="display: inline-block; font-family: <%= escape_javascript(PortalSetting.first.font).html_safe %>" >
-        <% if PortalSetting.first.layout == "thumbs" %>
-        <div class="thumbs" style="width: 120px">
-          <%= link_to @webclip.link, class: "webclip", target: "_blank" do %>
-          <%= image_base_64_tag @webclip.webclip_icon %>
-          <h3><%= @webclip.name %></h3> 
-          <% end %>
-        </div>
+  <div class="col-sm-9">
+      <div class="frontend <%= portal_body_theme %> <%= portal_icon_bg %>" style="display: inline-block; font-family: <%= portal_font %>" >
+        <% if @thumbs_layout %>
+          <div class="thumbs">
+            <%= link_to @webclip.link, class: "webclip", target: "_blank" do %>
+              <%= image_base_64_tag @webclip.webclip_icon %>
+              <h3><%= @webclip.name %></h3> 
+            <% end %>
+          </div>
         <% else%>
-        <div class="list" style="width: 325px; padding: 10px 10px 0 10px">
-          <%= link_to @webclip.link, class: "webclip", target: "_blank" do %>                  
-          <%= image_base_64_tag @webclip.webclip_icon %>
-          <h3><%= @webclip.name %></h3> 
-          <p><%= @webclip.description %></p>
-        </div>
+          <div class="list">
+            <%= link_to @webclip.link, class: "webclip", target: "_blank" do %>                  
+              <%= image_base_64_tag @webclip.webclip_icon %>
+              <h3><%= @webclip.name %></h3> 
+              <p><%= @webclip.description %></p>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
+      </div>
     </div>
-  </div>
 </div>
 <br/>
 <div class="row">

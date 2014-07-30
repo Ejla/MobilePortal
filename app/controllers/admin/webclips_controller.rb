@@ -10,6 +10,7 @@ class Admin::WebclipsController < ApplicationController
   # GET /webclips/1
   # GET /webclips/1.json
   def show
+    @thumbs_layout = (PortalSetting.first.layout == "thumbs")
   end
 
   # GET /webclips/new

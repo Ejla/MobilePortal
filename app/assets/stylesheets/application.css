@@ -196,6 +196,15 @@ textarea.form-control#image_base64_string{
 .table{
   border-bottom: 2px solid #DDD;
 }
+.backend .frontend .thumbs{
+  width: 140px; 
+  padding: 10px 10px 0 10px
+}
+.backend .frontend .list{
+  width: 325px; 
+  padding: 10px 10px 0 10px
+}
+
 @media (max-width: 767px){
   .show_label{
     text-align: left;
