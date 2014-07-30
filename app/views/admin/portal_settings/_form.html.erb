@@ -10,22 +10,21 @@ wrapper: :horizontal_form,
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :logo_image_id %>
-    <%= f.input :layout, :collection => ["thumbs", "list"] %>
-    <%= f.input :icon_bg, as: :radio_buttons, label: "Icon Background" %>
-    <%= f.input :theme, :collection => ["default", "mocca", "navy_dark"] %>
-    <%= f.input :font, :collection => ["'Open Sans', sans-serif", "'Droid Serif', serif"] %>
+    <%= f.input :title, label: 'Portal Title', hint: 'Visible only if there is no logo selected' %>
+    <%= f.input :logo_image_id, label: 'Portal Logo', hint: 'Logo will override the Portal Title' %>
+    <%= f.input :layout, as: :radio_buttons, label: 'Layout', :collection => ["thumbs", "list"], hint: 'Chose preferred layout of webclips' %>
+    <%= f.input :icon_bg, as: :radio_buttons, label: 'Icon Background', hint: 'Check "Yes" if you want to add shadow and light background to webclip icons' %>
+    <%= f.input :theme, label: 'Theme', :collection => ['default', 'mocca', 'navy_dark'] %>
+    <%= f.input :font, label: 'Font', :collection => ["'Open Sans', sans-serif", "'Droid Serif', serif"] %>
     <div class="row">
       <div class="col-sm-offset-3 col-sm-9">
         <h3 style="margin-bottom: 5px">Custom Styles:</h3>
-        <small>(these styles will override the styles of selected theme)</small>
+        <p class="help-block">(these styles will override the styles of selected theme)</p>
       </div>
     </div>
     <br/>
     <%= f.input :bg_css %>
     <%= f.input :bg_image_id %>
-  
   </div>
 <br/>
     <div class="row">

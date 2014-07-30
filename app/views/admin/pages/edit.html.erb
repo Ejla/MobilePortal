@@ -1,4 +1,4 @@
-<h1>Editing Page</h1>
+<h1>Editing Page "<%= @page.name %>"</h1>
 <br/>
 
 <%= render 'sortable_form' %>
@@ -6,6 +6,6 @@
 <%#= render 'form' %>
 
 <div class="links">
-<%= link_to 'Show This Page', [:admin, @page] %> |
-<%= link_to 'View All Pages', admin_pages_path %>
+  <%= link_to 'Show This Page', [:admin, @page] %> |
+  <%= link_to 'View All Pages', admin_pages_path %>
 </div>

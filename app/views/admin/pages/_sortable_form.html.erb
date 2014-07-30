@@ -1,49 +1,47 @@
 <p>Chose which of the available Webclips you want to have displayed on this page: </p><br/>
 <div class="row">
   <div class="col-sm-6">
-
-<h4>Available Webclips</h4>
-<div class="sortable1_wrapper">
-<ul id="sortable1" class="connectedSortable">
-  <% @available_webclips.each do |webclip| %>
-  <li class="ui-state-default">
-    <%= hidden_field_tag 'page[webclip_ids][]', webclip.id, id: "page_webclip_id_#{Time.now.to_i}" %>
-
-    <%= image_base_64_tag(webclip.webclip_icon)%>
-    <h5><%= webclip.name %></h5>
-  </li>
-  <% end %>
-</ul>
-</div>
-</div>
-
-  <div class="col-sm-6">
-<h4>Webclips on this Page <%= @page.name %></h4>
-<%#= debug @page.webclips %>
-<%#= form_tag [:admin, @page], method: 'put' do %>
-
-<%= simple_form_for([:admin, @page]) do |f| %>
+    <h4>Available Webclips:</h4>
     
-  <%= f.error_notification %>
-  
+    <div class="sortable1_wrapper">
+      <ul id="sortable1" class="connectedSortable">
+        <% @available_webclips.each do |webclip| %>
+        <li class="ui-state-default">
+          <%= hidden_field_tag 'page[webclip_ids][]', webclip.id, id: "page_webclip_id_#{Time.now.to_i}" %>
+          <%= image_base_64_tag(webclip.webclip_icon)%>
+          <h5><%= webclip.name %></h5>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="push-right">
+      <a href="<%= new_admin_webclip_path %>" class="add_new_webclip" data-placement="left" data-toggle="tooltip"  title="Create New Webclip">
+        <span class="glyphicon glyphicon-plus"></span>
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <h4>Webclips on this page:</h4>
+    <%= simple_form_for([:admin, @page]) do |f| %>
+    <%= f.error_notification %>
 
-<div class="sortable2_wrapper">
-<ul id="sortable2" class="connectedSortable">
-<% @page.webclips.each do |webclip| %>
-  <li class="ui-state-default">
-    <%= hidden_field_tag 'page[webclip_ids][]', webclip.id, id: "page_webclip_id_#{Time.now.to_i}" %>
-    <%= image_base_64_tag(webclip.webclip_icon)%>
-    <h5><%= webclip.name %></h5>
-  </li>
-<% end %>
-</ul>
-</div>
-<br/>
-<%= f.input :name, :label => "Page Name" %>
-<br/>
-<p class="push-right-sm"><%= submit_tag 'Save', class: 'btn btn-default' %></p>
-<% end %>
-</div>
+    <div class="sortable2_wrapper">
+      <ul id="sortable2" class="connectedSortable">
+        <% @page.webclips.each do |webclip| %>
+        <li class="ui-state-default">
+          <%= hidden_field_tag 'page[webclip_ids][]', webclip.id, id: "page_webclip_id_#{Time.now.to_i}" %>
+          <%= image_base_64_tag(webclip.webclip_icon)%>
+          <h5><%= webclip.name %></h5>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <br/>
+    <%= f.input :name, label: 'Page Name' %>
+    <br/>
+    <p class="push-right-sm"><%= submit_tag 'Save', class: 'btn btn-default' %></p>
+    <% end %>
+  </div>
 </div>
 
 <% content_for :javascript_per_page do %>
@@ -53,6 +51,9 @@ $(function() {
     connectWith: ".connectedSortable",
     placeholder: "sortable_placeholder"
   }).disableSelection();
+  
+  $("[data-toggle=tooltip]").tooltip();
 });
+
 </script>
 <% end %>

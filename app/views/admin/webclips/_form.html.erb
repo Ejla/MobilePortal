@@ -10,11 +10,14 @@ wrapper: :horizontal_form,
   <%= f.error_notification %>
 
   <div class="form-inputs form-webclip">
-    <%= f.input :name %>
-    <%= f.input :link %>
-    <%= f.input :description %>
-    <%= f.association :pages, as: :check_boxes %>
+    <%= f.input :name, label: 'Webclip Title', hint: 'Make it as short as possible' %>
+    <%= f.input :link, hint: 'URL you want this Webclip to point to (e.g. http://www.google.com)' %>
+    <%= f.input :description, hint: 'Visible only in "list" layout' %>
+    <%= f.association :pages, as: :check_boxes, hint: 'Webclip will be displayed only on selected pages' %>
     <%= f.association :webclip_icon, as: :radio_buttons, label_method: :icon_label %>
+    <div class="col-sm-offset-3 col-sm-9">
+      <p class="help-block" style="margin: 0 0 40px 0">Chose one of uploaded icons or <%= link_to 'upload new', new_admin_image_path %></p>
+    </div>
   </div>
 <br/>
   <div class="form-actions">

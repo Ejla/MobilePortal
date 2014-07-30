@@ -179,6 +179,9 @@ textarea.form-control#image_base64_string{
 .form-webclip .radio label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
   border:3px solid transparent;
+  height: 80px;
+  width: 80px;
+  padding: 10px;
 }
 .form-webclip .radio label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
   border:3px solid #1EB862;
@@ -187,7 +190,7 @@ textarea.form-control#image_base64_string{
 .webclip_webclip_icon span.radio{
   display: inline-block;
 }
-.push-right-sm{
+.push-right-sm, .push-right{
   text-align: right;
 }
 .icon_small img{
@@ -204,6 +207,35 @@ textarea.form-control#image_base64_string{
   width: 325px; 
   padding: 10px 10px 0 10px
 }
+a.add_new_webclip{
+  background-color: #f5f5f5;
+  line-height: 110px;
+  width: 120px;
+  text-align: center;
+  font-size: 36px;
+  color: #fff;
+  display: inline-block;
+  border-left: 5px solid #eee;
+  border-right: 5px solid #eee;
+  border-bottom: 5px solid #eee;
+}
+a.add_new_webclip:hover{
+  color: #1BA357;
+  background-color: #fafafa;
+}
+a.add_new_webclip:active{
+  background-color: #f0f0f0;
+  color: #1EB862;
+}
+abbr{
+  color: red;
+}
+.help-block{
+  font-size: .9em;
+}
+.check_boxes .help-block{
+  margin-top: 10px;
+}
 
 @media (max-width: 767px){
   .show_label{
@@ -214,3 +246,5 @@ textarea.form-control#image_base64_string{
     text-align: left;
   }
 }
+
+
