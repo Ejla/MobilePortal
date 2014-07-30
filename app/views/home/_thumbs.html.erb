@@ -1,0 +1,23 @@
+<div class="body_wrapper thumbs">
+  <div class="container">  
+    <% page.webclips.each_slice(6) do |slice_6| %>
+    <div class="row"> 
+      <% slice_6.each_slice(3) do |slice_3| %>
+      <div class="col-sm-6">
+        <div class="row">
+          <% slice_3.each do |webclip| %>
+          <div class="col-xs-4">
+            <%= link_to webclip.link, class: "webclip", target: "_blank" do %>
+            <%= image_base_64_tag webclip.webclip_icon %>
+            <h3><%= webclip.name %></h3> 
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
+   

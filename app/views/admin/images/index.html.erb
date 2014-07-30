@@ -1,14 +1,23 @@
-<h1>Listing Images</h1>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Media Library</h1><br/>
+  </div>
+  <div class="col-sm-6">
+    <p class="push-right-sm"><%= link_to 'Create New Webclip Icon', new_admin_image_path, class: 'btn btn-default' %> <%= link_to 'Create New Image', new_admin_image_path, class: 'btn btn-default' %></p>
+  </div>
+</div>
 <br/>
 
 <table class="table">
   <thead>
     <tr>
       <th>Image</th>
+      <th>Name</th>
       <th>Type</th>
       <th>Width</th>
       <th>Height</th>
-      <th>Name</th>
+      
       <th>Tags</th>
       <th colspan="3"></th>
     </tr>
@@ -17,15 +26,19 @@
   <tbody>
     <% @images.each do |image| %>
       <tr>
-        <td><img src="data:image/jpg;base64,<%= image.base64_string %>" height="60" /></td>
+        <td>
+          <%= link_to edit_admin_image_path(image) do %>
+          <img src="data:image/jpg;base64,<%= image.base64_string %>" height="60" />
+          <% end %>
+        </td>
+        <td><%= image.name %></td>
         <td><%= display_image_type(image) %></td>
         <td><%= image.width %></td>
-        <td><%= image.height %></td>
-        <td><%= image.name %></td>
+        <td><%= image.height %></td> 
         <td><%= image.tags %></td>
         <td><%= link_to 'Show', admin_image_path(image) %></td>
         <td><%= link_to 'Edit', edit_admin_image_path(image) %></td>
-        <td><%= link_to 'Destroy', admin_image_path(image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', admin_image_path(image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

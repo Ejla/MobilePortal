@@ -13,6 +13,7 @@ wrapper: :horizontal_form,
     <%= f.input :title %>
     <%= f.input :logo_image_id %>
     <%= f.input :layout, :collection => ["thumbs", "list"] %>
+    <%= f.input :icon_bg, as: :radio_buttons, label: "Icon Background" %>
     <%= f.input :theme, :collection => ["default", "mocca", "navy_dark"] %>
     <%= f.input :font, :collection => ["'Open Sans', sans-serif", "'Droid Serif', serif"] %>
     <div class="row">

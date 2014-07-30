@@ -1,4 +1,7 @@
 <p>Chose which of the available Webclips you want to have displayed on this page: </p><br/>
+<div class="row">
+  <div class="col-sm-6">
+
 <h4>Available Webclips</h4>
 <div class="sortable1_wrapper">
 <ul id="sortable1" class="connectedSortable">
@@ -12,10 +15,18 @@
   <% end %>
 </ul>
 </div>
-<br/>
-<h4>Webclips on Page "<%= @page.name %>"</h4>
+</div>
+
+  <div class="col-sm-6">
+<h4>Webclips on this Page <%= @page.name %></h4>
 <%#= debug @page.webclips %>
-<%= form_tag [:admin, @page], method: 'put' do %>
+<%#= form_tag [:admin, @page], method: 'put' do %>
+
+<%= simple_form_for([:admin, @page]) do |f| %>
+    
+  <%= f.error_notification %>
+  
+
 <div class="sortable2_wrapper">
 <ul id="sortable2" class="connectedSortable">
 <% @page.webclips.each do |webclip| %>
@@ -28,8 +39,12 @@
 </ul>
 </div>
 <br/>
-<%= submit_tag 'Save', class: 'btn btn-default' %>
+<%= f.input :name, :label => "Page Name" %>
+<br/>
+<p class="push-right-sm"><%= submit_tag 'Save', class: 'btn btn-default' %></p>
 <% end %>
+</div>
+</div>
 
 <% content_for :javascript_per_page do %>
 <script type="text/javascript">

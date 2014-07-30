@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724125808) do
+ActiveRecord::Schema.define(version: 20140730101436) do
 
   create_table "images", force: true do |t|
     t.text     "base64_string"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140724125808) do
     t.string   "theme"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "icon_bg",       default: false
   end
 
   create_table "webclips", force: true do |t|

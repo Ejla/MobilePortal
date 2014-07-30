@@ -1,32 +1,41 @@
-<h1>Listing Webclips</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <h1>All Webclips</h1><br/>
+  </div>
+  <div class="col-sm-6">
+    <p class="push-right-sm"><%= link_to 'Create New Webclip', new_admin_webclip_path, class: 'btn btn-default' %></p>
+  </div>
+</div>
 <br/>
 
 <table class="table">
   <thead>
     <tr>
       <th>Name</th>
+      <th>Icon</th>
       <th>Link</th>
       <th>Description</th>
       <th>Page</th>
-      <th colspan="4"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @webclips.each do |webclip| %>
       <tr>
-        <td><%= webclip.name %></td>
-        <td><%= webclip.link %></td>
+        <td><h4><%= link_to webclip.name, edit_admin_webclip_path(webclip) %></h4></td>
+        <td class="icon_small"><%= image_base_64_tag(webclip.webclip_icon)%></td>
+        <td><span class="glyphicon glyphicon-link"></span> &nbsp;<%= webclip.link %></td>
         <td><%= webclip.description %></td>
         <td><%= webclip.pages.map(&:name).join(', ') %></td>
-        <td><%= image_base_64_tag(webclip.webclip_icon)%></td>
+        
         <td><%= link_to 'Show', admin_webclip_path(webclip) %></td>
         <td><%= link_to 'Edit', edit_admin_webclip_path(webclip) %></td>
-        <td><%= link_to 'Destroy', admin_webclip_path(webclip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', admin_webclip_path(webclip), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<br/>
 
 <%= link_to 'Create New Webclip', new_admin_webclip_path, class: 'btn btn-default' %>

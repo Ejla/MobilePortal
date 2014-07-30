@@ -1,4 +1,11 @@
-<h1>Listing Pages</h1>
+<div class="row">
+  <div class="col-sm-6">
+    <h1>All Pages</h1><br/>
+  </div>
+  <div class="col-sm-6">
+    <p class="push-right-sm"><%= link_to 'Create New Page', new_admin_page_path, class: 'btn btn-default' %></p>
+  </div>
+</div>
 <br/>
 
 <table class="table">
@@ -13,11 +20,11 @@
   <tbody>
     <% @pages.each do |page| %>
       <tr>
-        <td><%= page.name %></td>
+        <td><h4><%= link_to page.name, edit_admin_page_path(page) %><h4></td>
         <td><%= page.webclips.map(&:name).join(', ') %></td>
         <td><%= link_to 'Show', admin_page_path(page) %></td>
         <td><%= link_to 'Edit', edit_admin_page_path(page) %></td>
-        <td><%= link_to 'Destroy', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', admin_page_path(page), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

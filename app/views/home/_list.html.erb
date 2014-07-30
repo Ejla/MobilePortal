@@ -1,0 +1,18 @@
+<div class="body_wrapper list">
+  <div class="container">  
+      <% page.webclips.each_slice(2) do |slice_2| %>
+        <div class="row">
+          <% slice_2.each do |webclip| %>
+          <div class="col-sm-6">
+            <%= link_to webclip.link, class: "webclip", target: "_blank" do %>                  
+              <%= image_base_64_tag webclip.webclip_icon %>
+              <h3><%= webclip.name %></h3>
+              <p><%= webclip.description %></p>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
+   

@@ -12,6 +12,7 @@
  *
  *= require jquery-ui
  *= require bootstrap
+ *= require bootstrap-editable
  *= require_tree .
  *= require_self
  */
@@ -33,7 +34,12 @@ a:hover, a:active{
 a:active{
   color: #43D483;
 }
-
+h1{
+  margin-top: 0;
+}
+td h4{
+  margin: 5px 0;
+}
 .navbar-inverse {
 background-color: #2C3E50;
 border-bottom: none;
@@ -106,7 +112,7 @@ ul.page_show li p a:first-child{
   border: 5px solid #5BC088;
 }
 #sortable1, #sortable2 {
-  min-height: 152px;
+  min-height: 135px;
   list-style-type: none;
   margin: 0;
   padding: 5px 0 0 0;
@@ -168,21 +174,34 @@ textarea.form-control#image_base64_string{
   -moz-box-shadow: inset 0 0 8px #ccc;
   -webkit-box-shadow: inset 0 0 8px #ccc;
   box-shadow: inset 0 0 8px #ccc;
+  margin-top: 10px;
 }
 .form-webclip .radio label > input + img{ /* IMAGE STYLES */
   cursor:pointer;
-  border:2px solid transparent;
+  border:3px solid transparent;
 }
 .form-webclip .radio label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
+  border:3px solid #1EB862;
+  background-color: #fff;
 }
 .webclip_webclip_icon span.radio{
   display: inline-block;
 }
-
+.push-right-sm{
+  text-align: right;
+}
+.icon_small img{
+  height: 50px;
+}
+.table{
+  border-bottom: 2px solid #DDD;
+}
 @media (max-width: 767px){
   .show_label{
     text-align: left;
     margin-bottom: 5px;
+  }
+  .push-right-sm{
+    text-align: left;
   }
 }
