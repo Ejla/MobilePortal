@@ -1,0 +1,53 @@
+<%# content_for :javascript do %>
+
+<script type="text/javascript" charset="utf-8">
+var fileSelector = '#image_file_selector';
+$(function() {
+  $(fileSelector).each(function() {
+    $(this).change(function() {
+      if(this.files!=undefined) { 
+        loadImage(this.files[0], $(this).siblings('img:first')); 
+      }
+      else { 
+        alert('Your Browser does not support HTML5 uploads! Please install newer browser like Chrome'); 
+      }
+    });
+  });
+  
+  $("form").submit(function() {
+    $(this).find(fileSelector).remove();
+    return true; // ensure form still submits
+  });
+});
+
+
+function loadImage(file, image) { 
+  var reader;
+  try {
+    reader = new FileReader();
+    var max_file_size = 1048576 * 4;
+    if (file.size > max_file_size) {
+      alert('File size is too big, limit under 4MB');
+      return;
+    }
+  } catch (err) {
+    // alert('Your Browser does not support HTML5 uploads! Please install newer browser like Chrome'); 
+    alert('No file chosen (or your Browser does not support HTML5 uploads)'); 
+    return;
+  }
+  
+  reader.onload = function(e){
+    // e.target.result holds the DataURL which can be used as a source of the image:
+    image.attr('src', e.target.result);
+    // image.attr('width','220');
+    // image.attr('height','192');
+    
+    $('#webclip_icon_base64_string').val(e.target.result);
+  }
+         
+  // Reading the file as a DataURL. When finished, this will trigger the onload function above:
+  reader.readAsDataURL(file);
+}
+</script>
+
+<%# end %>

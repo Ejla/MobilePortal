@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :images
+    resources :webclip_icons #, controller: 'webclip_icons', type: "WebclipIcon"
+    
     resources :pages do
       member do
         get 'remove_webclip/:webclip_id', action: :remove_webclip, as: :remove_webclip

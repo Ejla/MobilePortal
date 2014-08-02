@@ -16,7 +16,7 @@ wrapper: :horizontal_form,
     <%= f.association :pages, as: :check_boxes, hint: 'Webclip will be displayed only on selected pages' %>
     <%= f.association :webclip_icon, as: :radio_buttons, label_method: :icon_label %>
     <div class="col-sm-offset-3 col-sm-9">
-      <p class="help-block" style="margin: 0 0 40px 0">Chose one of uploaded icons or <%= link_to 'upload new', new_admin_image_path %></p>
+      <p class="help-block" style="margin: 0 0 40px 0">Chose one of uploaded icons or <%= link_to 'upload new', new_admin_webclip_icon_path %></p>
     </div>
   </div>
 <br/>

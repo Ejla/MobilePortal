@@ -1,0 +1,46 @@
+<%= render 'shared/file_reader' %>
+
+<%= simple_form_for([:admin, @image], html: { class: 'form-horizontal' }, wrapper: :horizontal_form,
+wrapper_mappings: {
+  check_boxes: :horizontal_radio_and_checkboxes,
+  radio_buttons: :horizontal_radio_and_checkboxes,
+  file: :horizontal_file_input,
+  boolean: :horizontal_boolean,
+}
+) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    
+    <div>
+      Current webclip icon:
+      <%= file_field_tag :image_file, id: 'image_file_selector', accept: "image/gif,image/jpeg,image/png" %>
+      <%#= hidden_field_tag :remote_url %>
+      <!-- <span class="label label-warning">Note: confirm image change with save button below</span> -->
+  
+      <% if f.object.try(:base64_string)  %>
+      <%= image_tag(f.object.base64_string, width: 70, id: 'image', data: { title: 'Image', ratio: '1:1', size: '700' }) %>
+      <% else %>
+      <%= image_tag("webclip_image.jpg", width: 70, id: 'image', data: { title: 'Image', ratio: '1:1', size: '700' }) %>
+      <% end %>
+
+      <%#= link_to "Convert another image to Base64 string", "http://www.base64-image.de/", target: '_blank' %>
+      <%#= link_to "Convert image to Base64", "http://www.freeformatter.com/base64-encoder.html", target: '_blank' %>
+    </div>
+    
+    <%= f.input :base64_string %>
+    <%= f.input :width %>
+    <%= f.input :height %>
+    <%= f.input :tags %>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-9">
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    </div>
+  </div>
+  <br/>
+<% end %>
+
