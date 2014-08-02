@@ -15,12 +15,10 @@ class Admin::PagesController < ApplicationController
   # GET /pages/new
   def new
     @page = Page.new
-    @available_webclips = Webclip.all
   end
 
   # GET /pages/1/edit
   def edit
-    @available_webclips = Webclip.all - @page.webclips.to_a
   end
 
   # POST /pages

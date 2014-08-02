@@ -5,7 +5,7 @@
     
     <div class="sortable1_wrapper">
       <ul id="sortable1" class="connectedSortable">
-        <% @available_webclips.each do |webclip| %>
+        <% available_webclips_for(@page).each do |webclip| %>
         <li class="ui-state-default">
           <%= hidden_field_tag 'page[webclip_ids][]', webclip.id, id: "page_webclip_id_#{Time.now.to_i}" %>
           <%= image_base_64_tag(webclip.webclip_icon)%>
