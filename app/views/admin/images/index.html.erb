@@ -28,7 +28,7 @@
       <tr>
         <td>
           <%= link_to edit_admin_image_path(image) do %>
-          <img src="<%= image.base64_string %>" height="60" />
+          <img src="data:image/png;base64, <%= image.base64_string %>" height="60" />
           <% end %>
         </td>
         <td><%= image.name %></td>

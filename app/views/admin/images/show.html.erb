@@ -12,7 +12,7 @@
 <br/>
 <div class="row">
   <div class="col-sm-3 show_label">Image Preview:</div>
-  <div class="col-sm-9"><img src="<%= @image.base64_string %>" style="max-width: 100%"/></div>
+  <div class="col-sm-9"><img src="data:image/png;base64, <%= @image.base64_string %>" style="max-width: 100%"/></div>
 </div>
 <br/>
 <div class="row">

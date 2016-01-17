@@ -39,7 +39,6 @@ Webclip.first_or_create!([
   {name: "Webclip 6", link: "http://www.codeschool.com", description: "Lorem ipsum dolor sit amet", webclip_icon_id: 7},
   {name: "Webclip 7", link: "http://www.codeschool.com", description: "Lorem ipsum dolor sit amet", webclip_icon_id: 8},
   {name: "Webclip 8", link: "http://www.codeschool.com", description: "Lorem ipsum dolor sit amet", webclip_icon_id: 9},
-  {name: "Webclip bez ičega", link: "", description: "", webclip_icon_id: nil},
   {name: "Webclip 10", link: "http://www.codeschool.com", description: "Lorem ipsum dolor sit amet", webclip_icon_id: 9}
 ])
 WebclipIcon.first_or_create!([
