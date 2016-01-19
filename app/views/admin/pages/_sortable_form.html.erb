@@ -1,4 +1,4 @@
-<p>Chose which of the available Webclips you want to have displayed on this page: </p><br/>
+<p>Drag webclips you want to have displayed in this group and drop them inside green area: </p><br/>
 <div class="row">
   <div class="col-sm-6">
     <h4>Available Webclips:</h4>
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="col-sm-6">
-    <h4>Webclips on this page:</h4>
+    <h4>Webclips in this group:</h4>
     <%= simple_form_for([:admin, @page]) do |f| %>
     <%= f.error_notification %>
 
@@ -37,7 +37,7 @@
       </ul>
     </div>
     <br/>
-    <%= f.input :name, label: 'Page Name' %>
+    <%= f.input :name, label: 'Group Name' %>
     <br/>
     <p class="push-right-sm"><%= submit_tag 'Save', class: 'btn btn-default' %></p>
     <% end %>

@@ -1,5 +1,5 @@
 
-<h2>Page Name: <%= @page.name %></h2>
+<h2>Group Name: <%= @page.name %></h2>
 <br/>
 
 <ul class="page_show">
@@ -18,8 +18,8 @@
   <% end %>
 </ul>
 <br/>
-<%= link_to 'Edit This Page', edit_admin_page_path(@page), class: "btn btn-default" %> &nbsp; <%= link_to 'Delete this Page', admin_page_path(@page), class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit This Page', edit_admin_page_path(@page), class: "btn btn-default" %> &nbsp; <%= link_to 'Delete this Group', admin_page_path(@page), class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
 <br/><br/>
 <div class="links">
-<%= link_to 'View All Pages', admin_pages_path %>
+<%= link_to 'View All Groups', admin_pages_path %>
 </div>

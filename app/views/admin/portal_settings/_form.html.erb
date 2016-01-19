@@ -14,7 +14,7 @@ wrapper: :horizontal_form,
     <%= f.input :logo_image_id, label: 'Portal Logo', hint: 'Logo will override the Portal Title' %>
     <%= f.input :layout, as: :radio_buttons, label: 'Layout', :collection => ["thumbs", "list"], hint: 'Chose preferred layout of webclips' %>
     <%= f.input :icon_bg, as: :radio_buttons, label: 'Icon Background', hint: 'Check "Yes" if you want to add shadow and light background to webclip icons' %>
-    <%= f.input :theme, label: 'Theme', :collection => ['default', 'mocca', 'navy_dark'] %>
+    <%= f.input :theme, label: 'Theme', :collection => ['default', 'mocca', 'navy_dark', 'theme_bg'] %>
     <%= f.input :font, label: 'Font', :collection => ["'Open Sans', sans-serif", "'Droid Serif', serif"] %>
     <div class="row">
       <div class="col-sm-offset-3 col-sm-9">
